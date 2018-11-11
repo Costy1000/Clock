@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   
+    
+   <script src="script.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet"> 
+   <link rel="stylesheet" type="text/css" href="main.css">  
+   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Clock</title>
+</head>
+<body> 
+    
+   <div id="clock"></div>
+   <div id="button">  
+     <button id="start" onclick="stopFunction()">Start Clock</button>
+   </div>
+<script>
+      var t;
+function colorClock(){
+  var date = new Date();
+
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();  
+
+
+  if (hours <= 9) {
+    hours = "0" + hours;
+  }
+  if (minutes <= 9) {
+    minutes = "0" + minutes;
+  }
+  if (seconds <= 9) {
+    seconds = "0" + seconds;
+  }
+
+  var clockFace = hours + ':' + minutes + ':' + seconds;
+  document.getElementById('clock').innerHTML = clockFace;
+ 
+
+   if( seconds <= 10){
+     document.body.style.background = '#ff4dff'; /* pentru browsere care nu suporta radial-gradient */
+     document.body.style.background = 'radial-gradient(#ff99bb, #ff3399, #e6005c)';
+    
+   }
+   
+    else if ( seconds <= 20){
+    document.body.style.background =  '#5cd65c';/* pentru browsere care nu suporta radial-gradient */
+    document.body.style.background = 'radial-gradient(#99ff99 , #00cc00, #009900 )';
+      
+    
+   }
+  else if ( seconds <= 30){
+     document.body.style.background =  '#e6e600';/* pentru browsere care nu suporta radial-gradient */
+     document.body.style.background = 'radial-gradient(#ffff99 , #e6e600, #b3b300 )';
+    
+  }
+  else if ( seconds <= 40){
+     document.body.style.background =  '#ffa64d';/* pentru browsere care nu suporta radial-gradient */ 
+     document.body.style.background = 'radial-gradient(#ffdd99 , #ffbb33 , #e69900 )';
+  
+ 
+  }
+ else if ( seconds <= 50){
+     document.body.style.background =  '#ff6666';/* pentru browsere care nu suporta radial-gradient */  
+     document.body.style.background = 'radial-gradient(#ffc6b3 , #ff6633, #cc3300 )';
+    
+  }
+  else if ( seconds <= 60){
+     document.body.style.background =  '#4da6ff';/* pentru browsere care nu suporta radial-gradient */ 
+     document.body.style.background = 'radial-gradient(#b3d9ff , #3399ff , #0073e6 ) ';
+   
+     
+  }
+   
+  
+ t =   setTimeout(
+    colorClock, 1000);
+}
+
+  function timeFunction(){
+    clearTimeout(t)
+
+  }
+     function stopFunction() {
+        
+         var x = document.getElementById("start");
+         var y = document.getElementById("clock");
+         if (x.innerHTML === "Start Clock"){
+             x.innerHTML =  "Stop Clock";
+              colorClock();
+         }  else if  (x.innerHTML === "Stop Clock") {
+             x.innerHTML = "Start Clock";
+             timeFunction();
+             
+         } 
+         
+     }
+     
+  var date = new Date();
+
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();  
+  
+
+  if (hours <= 9) {
+    hours = "0" + hours;
+  }
+  if (minutes <= 9) {
+    minutes = "0" + minutes;
+  }
+  if (seconds <= 9) {
+    seconds = "0" + seconds;
+  }
+  var clockFace = hours + ':' + minutes + ':' + seconds;
+  if( seconds <= 10){
+     document.body.style.background = '#ff4dff'; /* pentru browsere care nu suporta radial-gradient */
+     document.body.style.background = 'radial-gradient(#ff99bb, #ff3399, #e6005c)';
+   
+    
+   }
+   
+    else if ( seconds <= 20){
+    document.body.style.background =  '#5cd65c';/* pentru browsere care nu suporta radial-gradient */
+    document.body.style.background = 'radial-gradient(#99ff99 , #00cc00, #009900 )';
+      
+    
+   }
+  else if ( seconds <= 30){
+     document.body.style.background =  '#e6e600';/* pentru browsere care nu suporta radial-gradient */
+     document.body.style.background = 'radial-gradient(#ffff99 , #e6e600, #b3b300 )';
+    
+  }
+  else if ( seconds <= 40){
+     document.body.style.background =  '#ffa64d';/* pentru browsere care nu suporta radial-gradient */ 
+     document.body.style.background = 'radial-gradient(#ffdd99 , #ffbb33 , #e69900 )';
+  
+ 
+  }
+ else if ( seconds <= 50){
+     document.body.style.background =  '#ff6666';/* pentru browsere care nu suporta radial-gradient */  
+     document.body.style.background = 'radial-gradient(#ffc6b3 , #ff6633, #cc3300 )';
+    
+  }
+  else if ( seconds <= 60){
+     document.body.style.background =  '#4da6ff';/* pentru browsere care nu suporta radial-gradient */ 
+     document.body.style.background = 'radial-gradient(#b3d9ff , #3399ff , #0073e6 ) ';
+
+     
+  }
+    
+  document.getElementById('clock').innerHTML = clockFace;    
+  
+</script>    
+  
+
+</body>
+</html>
