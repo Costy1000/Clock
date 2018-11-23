@@ -1,7 +1,5 @@
 # Clock
 Web Development
-# Profile-Card
-Web Development
 # Built With:
  HTML <br>
  CSS <br>
